@@ -27,7 +27,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        android:layout_marginBottom="@dimen/fab_margin_bottom"
+        android:layout_marginLeft="@dimen/fab_margin_left"
+        android:layout_marginRight="@dimen/fab_margin_right"
+        android:layout_marginTop="@dimen/fab_margin_top"
+        app:srcCompat="@android:drawable/ic_search_category_default" />
 
 </android.support.design.widget.CoordinatorLayout>
