@@ -20,7 +20,7 @@
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
-        android:id="@+id/editText"
+        android:id="@+id/tvOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
