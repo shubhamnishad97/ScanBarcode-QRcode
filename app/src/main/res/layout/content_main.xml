@@ -9,11 +9,10 @@
     tools:showIn="@layout/activity_main">
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:id="@+id/recyclerView"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:layout_height="match_parent"
+        android:paddingBottom="8dp">
 
     </android.support.v7.widget.RecyclerView>
 </android.support.constraint.ConstraintLayout>
