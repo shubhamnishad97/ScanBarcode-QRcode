@@ -82,8 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 listItems.add(listItem);
                 adapter = new MyAdapter(listItems, this);
                 recyclerView.setAdapter(adapter);
-
-                //Linkify.addLinks(tvOutput, Linkify.WEB_URLS);
+                
 
             }
         } else {

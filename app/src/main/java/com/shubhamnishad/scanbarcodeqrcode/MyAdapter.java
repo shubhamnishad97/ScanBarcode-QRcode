@@ -1,7 +1,9 @@
 package com.shubhamnishad.scanbarcodeqrcode;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         ListItem listItem = listItems.get(position);
         holder.textViewCode.setText(listItem.getCode());
         holder.textViewType.setText(listItem.getType());
+        Linkify.addLinks(holder.textViewCode, Linkify.ALL);
     }
 
     @Override
