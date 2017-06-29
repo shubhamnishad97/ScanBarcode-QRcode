@@ -74,7 +74,9 @@ public class MainActivity extends AppCompatActivity {
         if (result != null) {
 
             if (result.getContents() == null) {
-                Toast.makeText(this, "Result Not Found", Toast.LENGTH_LONG).show();
+                Snackbar snackbar = Snackbar.make(findViewById(R.id.coordinate), "Result Not Found", Snackbar.LENGTH_LONG);
+
+                snackbar.show();
             } else {
                 ListItem listItem = new ListItem(result.getContents().toString(),result.getFormatName().toString());
                 listItems.add(listItem);
