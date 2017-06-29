@@ -24,13 +24,13 @@
                 tools:text="code"
                 android:id="@+id/textViewCode"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="16dp" />
             <TextView
-                android:textSize="20sp"
+
                 tools:text="type"
                 android:id="@+id/textViewType"
                 android:layout_width="0dp"
