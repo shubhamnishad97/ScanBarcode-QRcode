@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     List<ListItem> listItems;
-    private static final int TASK_LOADER_ID = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,22 +47,10 @@ public class MainActivity extends AppCompatActivity {
             // Called when a user swipes left or right on a ViewHolder
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-                // Here is where you'll implement swipe to delete
-
-                // COMPLETED (1) Construct the URI for the item to delete
-                //[Hint] Use getTag (from the adapter code) to get the id of the swiped item
-                // Retrieve the id of the task to delete
                 final int position = viewHolder.getAdapterPosition();
                 listItems.remove(position);
                 adapter.notifyItemRemoved(position);
                 adapter.notifyItemRangeChanged(position,listItems.size());
-
-
-                // Build appropriate uri with String row id appended
-
-
-
-                // COMPLETED (3) Restart the loader to re-query for all tasks after a deletion
 
             }
         }).attachToRecyclerView(recyclerView);
@@ -107,12 +94,10 @@ public class MainActivity extends AppCompatActivity {
 
                 snackbar.show();
             } else {
-                ListItem listItem = new ListItem(result.getContents().toString(),result.getFormatName().toString());
+                ListItem listItem = new ListItem(result.getContents(),result.getFormatName());
                 listItems.add(listItem);
                 adapter = new MyAdapter(listItems, this);
                 recyclerView.setAdapter(adapter);
-
-
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
