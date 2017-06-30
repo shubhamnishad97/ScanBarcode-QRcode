@@ -106,6 +106,16 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.action_clearAll) {
+            PracticeDatabaseHelper dbHelper = new PracticeDatabaseHelper(this);
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            if(db != null) {
+                cupboard().withDatabase(db).delete(Code.class, null);
+                listItems.clear();
+                adapter.notifyDataSetChanged();
+            }
+            else return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }

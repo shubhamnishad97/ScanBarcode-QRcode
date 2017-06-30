@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.shubhamnishad.scanbarcodeqrcode.MainActivity">
     <item
+        android:id="@+id/action_clearAll"
+        android:orderInCategory="100"
+        android:title="@string/action_clearAll"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"

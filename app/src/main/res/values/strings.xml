@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Scan Barcode &amp; QR code</string>
     <string name="action_settings">Settings</string>
+    <string name="action_clearAll">Clear All</string>
 </resources>
