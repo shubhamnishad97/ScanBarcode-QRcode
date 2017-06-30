@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         listItems = new ArrayList<>();
+        adapter = new MyAdapter(listItems, this);
+        recyclerView.setAdapter(adapter);
 
         Cursor codes = cupboard().withDatabase(db).query(Code.class).orderBy( "_id DESC").getCursor();
         try {
@@ -109,12 +111,18 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_clearAll) {
             PracticeDatabaseHelper dbHelper = new PracticeDatabaseHelper(this);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
-            if(db != null) {
-                cupboard().withDatabase(db).delete(Code.class, null);
-                listItems.clear();
-                adapter.notifyDataSetChanged();
+            Cursor codes = cupboard().withDatabase(db).query(Code.class).orderBy( "_id DESC").getCursor();
+            try {
+                if (codes.getCount() > 0) {
+                    cupboard().withDatabase(db).delete(Code.class, null);
+                    listItems.clear();
+                    adapter.notifyDataSetChanged();
+                } else {
+                    return true;
+                }
+            }finally {
+                codes.close();
             }
-            else return true;
         }
 
         return super.onOptionsItemSelected(item);
