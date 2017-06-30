@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        PracticeDatabaseHelper dbHelper = new PracticeDatabaseHelper(this);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        final PracticeDatabaseHelper dbHelper = new PracticeDatabaseHelper(this);
+        final SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         recyclerView =(RecyclerView)findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             QueryResultIterable<Code> itr = cupboard().withCursor(codes).iterate(Code.class);
             for (Code bunny : itr) {
                 // do something with bunny
-                ListItem listItem = new ListItem(bunny.name,bunny.type);
+                ListItem listItem = new ListItem( bunny._id,bunny.name,bunny.type);
                 listItems.add(listItem);
                 adapter = new MyAdapter(listItems, this);
                 recyclerView.setAdapter(adapter);
@@ -74,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
                 final int position = viewHolder.getAdapterPosition();
+                ListItem item=listItems.get(position);
+
+                cupboard().withDatabase(db).delete(Code.class,item.get_Id());
                 listItems.remove(position);
                 adapter.notifyItemRemoved(position);
                 adapter.notifyItemRangeChanged(position,listItems.size());
@@ -149,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                     QueryResultIterable<Code> itr = cupboard().withCursor(codes).iterate(Code.class);
                     for (Code bunny : itr) {
                         // do something with bunny
-                        ListItem listItem = new ListItem(bunny.name,bunny.type);
+                        ListItem listItem = new ListItem( bunny._id,bunny.name,bunny.type);
                         listItems.add(listItem);
                         adapter = new MyAdapter(listItems, this);
                         recyclerView.setAdapter(adapter);

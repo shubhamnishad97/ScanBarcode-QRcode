@@ -33,6 +33,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         ListItem listItem = listItems.get(position);
+        holder.textView_Id.setText(String.valueOf(listItem.get_Id()));
         holder.textViewCode.setText(listItem.getCode());
         holder.textViewType.setText(listItem.getType());
         Linkify.addLinks(holder.textViewCode, Linkify.ALL);
@@ -44,10 +45,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+        public TextView textView_Id;
         public TextView textViewCode;
         public TextView textViewType;
+
+        public TextView getTextView_Id() {
+            return textView_Id;
+        }
+
         public ViewHolder(View itemView) {
             super(itemView);
+            textView_Id = (TextView)itemView.findViewById(R.id.textView_Id);
             textViewCode = (TextView)itemView.findViewById(R.id.textViewCode);
             textViewType = (TextView)itemView.findViewById(R.id.textViewType);
         }
