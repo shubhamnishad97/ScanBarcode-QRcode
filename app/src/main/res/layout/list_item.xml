@@ -7,53 +7,64 @@
 
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:onClick="cardClick">
 
-        android:layout_marginBottom="5dp">
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp">
 
             <TextView
 
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:textSize="20sp"
-                tools:text="code"
                 android:id="@+id/textViewCode"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textIsSelectable="true"
+                android:textSize="20sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp" />
+                tools:text="code" />
+
             <TextView
 
-                tools:text="type"
                 android:id="@+id/textViewType"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp" />
+                tools:text="type" />
+
             <TextView
 
-                tools:text="id"
                 android:id="@+id/textView_Id"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
+                android:layout_marginTop="64dp"
+                android:visibility="gone"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="64dp"
-                android:layout_marginEnd="16dp" />
+                tools:text="id" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
+
+
 
 </LinearLayout>

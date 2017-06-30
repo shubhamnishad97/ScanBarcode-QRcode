@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         listItems = new ArrayList<>();
         adapter = new MyAdapter(listItems, this);
         recyclerView.setAdapter(adapter);
+        CardView cardView = (CardView)findViewById(R.id.cardView);
 
         Cursor codes = cupboard().withDatabase(db).query(Code.class).orderBy( "_id DESC").getCursor();
         try {
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 scan.initiateScan();
             }
         });
+
     }
 
     @Override
@@ -166,4 +169,14 @@ public class MainActivity extends AppCompatActivity {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+    public void cardClick(View card){
+        TextView textView = (TextView)findViewById(R.id.textViewCode);
+        String code= textView.getText().toString();
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, code);
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
+    }
+
 }
