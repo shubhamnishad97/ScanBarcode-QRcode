@@ -128,14 +128,28 @@ public class MainActivity extends AppCompatActivity {
 
                 snackbar.show();
             } else {
-                ListItem listItem = new ListItem(result.getContents(),result.getFormatName());
-                listItems.add(0,listItem);
-                adapter = new MyAdapter(listItems, this);
-                recyclerView.setAdapter(adapter);
+
                 Code codeObj = new Code(result.getContents(),result.getFormatName());
                 PracticeDatabaseHelper dbHelper = new PracticeDatabaseHelper(this);
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
                 long id = cupboard().withDatabase(db).put(codeObj);
+                listItems.clear();
+                adapter.notifyDataSetChanged();
+                Cursor codes = cupboard().withDatabase(db).query(Code.class).orderBy( "_id DESC").getCursor();
+                try {
+                    // Iterate Bunnys
+                    QueryResultIterable<Code> itr = cupboard().withCursor(codes).iterate(Code.class);
+                    for (Code bunny : itr) {
+                        // do something with bunny
+                        ListItem listItem = new ListItem(bunny.name,bunny.type);
+                        listItems.add(listItem);
+                        adapter = new MyAdapter(listItems, this);
+                        recyclerView.setAdapter(adapter);
+                    }
+                } finally {
+                    // close the cursor
+                    codes.close();
+                }
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
