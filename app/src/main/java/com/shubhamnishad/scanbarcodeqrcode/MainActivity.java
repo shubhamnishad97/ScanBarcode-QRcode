@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         listItems = new ArrayList<>();
 
-        Cursor codes = cupboard().withDatabase(db).query(Code.class).getCursor();
+        Cursor codes = cupboard().withDatabase(db).query(Code.class).orderBy( "_id DESC").getCursor();
         try {
             // Iterate Bunnys
             QueryResultIterable<Code> itr = cupboard().withCursor(codes).iterate(Code.class);
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 snackbar.show();
             } else {
                 ListItem listItem = new ListItem(result.getContents(),result.getFormatName());
-                listItems.add(listItem);
+                listItems.add(0,listItem);
                 adapter = new MyAdapter(listItems, this);
                 recyclerView.setAdapter(adapter);
                 Code codeObj = new Code(result.getContents(),result.getFormatName());
