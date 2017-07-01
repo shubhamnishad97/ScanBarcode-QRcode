@@ -1,12 +1,14 @@
 package com.shubhamnishad.scanbarcodeqrcode;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -43,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
         final PracticeDatabaseHelper dbHelper = new PracticeDatabaseHelper(this);
         final SQLiteDatabase db = dbHelper.getWritableDatabase();
 
+        PreferenceManager.setDefaultValues(this, R.xml.settings, false);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        Boolean beep = sharedPref.getBoolean("beep",true);
+        Boolean frontCamera = sharedPref.getBoolean("frontCamera",false);
+        int camId;
+        if(frontCamera == false)
+            camId = 0;
+        else
+            camId = 1;
         recyclerView =(RecyclerView)findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -86,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }).attachToRecyclerView(recyclerView);
         scan = new IntentIntegrator(this);
+        scan.setBeepEnabled(beep);
+        scan.setCameraId(camId);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
