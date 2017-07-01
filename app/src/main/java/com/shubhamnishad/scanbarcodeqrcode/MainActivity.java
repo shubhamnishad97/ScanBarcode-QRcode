@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.preference.PreferenceFragment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +32,7 @@ import nl.qbusict.cupboard.QueryResultIterable;
 
 import static nl.qbusict.cupboard.CupboardFactory.cupboard;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
     IntentIntegrator scan;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
@@ -54,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
             camId = 0;
         else
             camId = 1;
+        sharedPref.registerOnSharedPreferenceChangeListener(this);
+
         recyclerView =(RecyclerView)findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -193,4 +196,25 @@ public class MainActivity extends AppCompatActivity {
         startActivity(sendIntent);
     }
 
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if (key.equals("beep")) {
+            scan.setBeepEnabled(sharedPreferences.getBoolean(key,true));
+        }
+        if (key.equals("frontCamera")) {
+            int camId;
+            if(sharedPreferences.getBoolean(key,false)== false)
+                camId = 0;
+            else
+                camId = 1;
+            scan.setCameraId(camId);
+        }
+
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        PreferenceManager.getDefaultSharedPreferences(this)
+                .unregisterOnSharedPreferenceChangeListener(this);
+    }
 }

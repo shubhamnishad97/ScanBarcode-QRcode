@@ -13,7 +13,7 @@
         <CheckBoxPreference
             android:key="frontCamera"
             android:summary="Enable front camera for scanning"
-            android:title="FrontCamera"
+            android:title="Front Camera"
             android:defaultValue="false"/>
     </PreferenceCategory>
 </PreferenceScreen>
