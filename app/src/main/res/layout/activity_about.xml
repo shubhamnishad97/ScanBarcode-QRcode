@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.shubhamnishad.scanbarcodeqrcode.About">
+    <TextView
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Github"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:text="https://github.com/shubhamnishad97"
+        android:autoLink="web"
+        tools:layout_editor_absoluteY="42dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <View
+        android:layout_width="368dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        tools:layout_editor_absoluteY="76dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Twitter"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_height="wrap_content"
+        android:text="https://twitter.com/shubhamnishad97"
+        android:autoLink="web"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteY="42dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <View
+        android:layout_width="368dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        tools:layout_editor_absoluteY="76dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Website"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="https://shubhamnishad.com"
+        android:autoLink="web"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteY="42dp"
+        android:layout_margin="8dp"
+        tools:layout_editor_absoluteX="8dp" />
+    <View
+        android:layout_width="368dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        tools:layout_editor_absoluteY="76dp"
+        tools:layout_editor_absoluteX="8dp" />
+
+
+</LinearLayout>

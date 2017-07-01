@@ -147,6 +147,10 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
                 codes.close();
             }
         }
+        if (id == R.id.action_about) {
+            Intent aboutIntent = new Intent(this, About.class);
+            startActivity(aboutIntent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
