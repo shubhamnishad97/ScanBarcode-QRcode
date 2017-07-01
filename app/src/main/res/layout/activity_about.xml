@@ -81,5 +81,5 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="shubhamnishad @ June 2017"/>
+        android:text="ShubhamNishad@June2017"/>
 </LinearLayout>
