@@ -5,12 +5,12 @@
     android:title="Settings"
     app:key="settings">
 
-        <SwitchPreference
+        <CheckBoxPreference
             android:key="beep"
             android:summary="Enable beep on code scan"
             android:title="Beep Sound"
             android:defaultValue="true"/>
-        <SwitchPreference
+        <CheckBoxPreference
             android:key="frontCamera"
             android:summary="Enable front camera for scanning"
             android:title="Front Camera"
