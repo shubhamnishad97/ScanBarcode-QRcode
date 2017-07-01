@@ -1,5 +1,1 @@
-build/generated
-build/tmp
-build/intermediates
-build/outputs/logs
-build/reports
+build/
