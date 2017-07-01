@@ -24,7 +24,7 @@
         tools:layout_editor_absoluteY="42dp"
         tools:layout_editor_absoluteX="8dp" />
     <View
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
         tools:layout_editor_absoluteY="76dp"
@@ -47,7 +47,7 @@
         tools:layout_editor_absoluteY="42dp"
         tools:layout_editor_absoluteX="8dp" />
     <View
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
         tools:layout_editor_absoluteY="76dp"
@@ -70,11 +70,16 @@
         android:layout_margin="8dp"
         tools:layout_editor_absoluteX="8dp" />
     <View
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
         tools:layout_editor_absoluteY="76dp"
         tools:layout_editor_absoluteX="8dp" />
 
-
+    <TextView
+        android:layout_margin="16dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="shubhamnishad @ June 2017"/>
 </LinearLayout>
