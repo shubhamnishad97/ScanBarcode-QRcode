@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ScanBarcod&amp;QRcode.iml" filepath="$PROJECT_DIR$/ScanBarcod&amp;QRcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ScanBarcode&amp;QRcode.iml" filepath="$PROJECT_DIR$/ScanBarcode&amp;QRcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
