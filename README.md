@@ -4,7 +4,7 @@ Scan Barcode &amp; QR code is a simple and fast code scanner with all the featur
 I had completed the Udacity andriod course and decided to make my own app.
 
 Reasons to make the Scanner app :
-* The idea did not looked complex to implement.
+* The idea did not looked complex for a beginner to implement.
 * I already knew a barcode scanner library which was pretty popular.
 * All the similar apps on playstore had AD'S and I wanted a AD free version.
 * The UI of these apps was also old, not updated for a time now so a Material Design solution was needed.
