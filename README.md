@@ -11,7 +11,7 @@ Reasons to make the Scanner app :
 
 The libraries or resources used:
 * [Zxing-android-embedded](https://github.com/journeyapps/zxing-android-embedded): really easy to use and does what it says very efficently.
-* [cupboard](https://bitbucket.org/littlerobots/cupboard): makes SQL vey simple. you should atleast read it usage.[link](http://guides.codepath.com/android/Easier-SQL-with-Cupboard)
+* [cupboard](https://bitbucket.org/littlerobots/cupboard): makes SQL vey simple. you should atleast read it usage. [Read this for more info](http://guides.codepath.com/android/Easier-SQL-with-Cupboard)
 * [CodePath Android Cliffnotes](http://guides.codepath.com/android): A crowdsourced resource for complete and up-to-date practical Android developer guides for any topic.
 *youtube also helped as always.
 
