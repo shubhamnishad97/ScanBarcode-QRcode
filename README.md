@@ -36,5 +36,6 @@ tested to be working on
 * LG G3[API 19]
 * Nexus 4[API 19]
 * Nexus 5[API 23]
-* Moto E[API 19].
+* Moto E[API 19]
+* Redmi 4[API 25].
  
