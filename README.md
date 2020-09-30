@@ -1,4 +1,4 @@
-# ScanBarcode-QRcode
+# Barcode-QRcode Scanner
 Scan Barcode &amp; QR code is a simple and fast code scanner with all the features a modern android app.
 
 <img src="screenshots/PhoneScreenshot1.jpg" width="250">  <img src="screenshots/PhoneScreenshot2.jpg" width="250">  <img src="screenshots/PhoneScreenshot3.jpg" width="250">  <img src="screenshots/PhoneScreenshot4.jpg" width="250">  <img src="screenshots/PhoneScreenshot5.jpg" width="250">  <img src="screenshots/PhoneScreenshot6.jpg" width="250">
